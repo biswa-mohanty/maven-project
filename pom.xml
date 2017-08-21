@@ -13,6 +13,8 @@
 		<mule.tools.version>1.2</mule.tools.version>
 		<derby.version>10.13.1.1</derby.version>
 		<activemq.version>5.14.5</activemq.version>
+		<app.name>maven-project</app.name>
+		<name.suffix>bm</name.suffix>
 		<uid>biswa_mohanty</uid>
 		<pwd></pwd>
 	</properties>
@@ -66,7 +68,7 @@
 					<workerType>Micro</workerType>
 					<redeploy>true</redeploy>
 					<environment>Sandbox</environment>
-					<applicationName>myapp-maven-project</applicationName>
+					<applicationName>myapp-${project.name}-${name.suffix}</applicationName>
 				</configuration>
 				<executions>
 					<execution>
