@@ -13,6 +13,8 @@
 		<mule.tools.version>1.2</mule.tools.version>
 		<derby.version>10.13.1.1</derby.version>
 		<activemq.version>5.14.5</activemq.version>
+		<uid>biswa_mohanty</uid>
+		<pwd></pwd>
 	</properties>
 	<build>
 		<plugins>
@@ -49,6 +51,30 @@
 								</resource>
 							</resources>
 						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<deploymentType>cloudhub</deploymentType>
+					<muleVersion>${mule.version}</muleVersion>
+					<username>${uid}</username>
+					<password>${pwd}</password>
+					<workerType>Micro</workerType>
+					<redeploy>true</redeploy>
+					<environment>Sandbox</environment>
+					<applicationName>myapp-maven-project</applicationName>
+				</configuration>
+				<executions>
+					<execution>
+						<id>deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
@@ -185,11 +211,11 @@
 			<layout>default</layout>
 		</repository>
 		<repository>
-    			<id>Nexus</id>
-    			<name>Nexus Public Repository</name>
-    			<url>https://repository-master.mulesoft.org/nexus/content/groups/public/</url>
-    			<layout>default</layout>
- 		</repository>
+			<id>Nexus</id>
+			<name>Nexus Public Repository</name>
+			<url>https://repository-master.mulesoft.org/nexus/content/groups/public/</url>
+			<layout>default</layout>
+		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
