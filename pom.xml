@@ -68,7 +68,7 @@
 					<workerType>Micro</workerType>
 					<redeploy>true</redeploy>
 					<environment>Sandbox</environment>
-					<applicationName>myapp-${project.name}-${name.suffix}</applicationName>
+					<applicationName>myapp-maven-project-bm</applicationName>
 				</configuration>
 				<executions>
 					<execution>
